@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validateform(){
+            if(document.getElementById("uname").value.length<5 && document.getElementById("uname").value.length>15 ){
+                alert("Enter username with length more than 5 and less than 15 characters");
+                document.myform.name.focus();
+            }else if(document.getElementById("password").value!="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"){
+            alert("Enter password with atleast one upper case, lower case, number and special character");
+                document.myform.pass.focus();
+            }else if(document.getElementById("uphone").value.length!=10){
+            alert("Enter valid number");
+                document.myform.phone.focus();
+            }else{
+            alert("You are Registered");
+                document.myform.submit();
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form action="success.html"  name="myform">
+    <fieldset>
+        <legend align="center">Demo Form</legend>
+    <table border="0.5" cellpadding="10" cellspacing="10">
+        <tr>
+        <td><b>Enter Name</b></td>
+        <td><input type="text" name="name" id="uname" placeholder="Enter name" required/></td>
+        </td><br>
+        </tr>
+        <tr>
+        <td><b>Enter Password</b></td>
+        <td><input type="password" name="pass" id="password" placeholder="Enter password" /></td>
+        </tr>
+    
+        <tr>
+            <td><b>Enter Email</b></td>
+            <td><input type="email" name="email" id="uemail" placeholder="Enter email" /></td>
+            </tr>
+    <tr>
+        <td><b>Enter Phone</b></td>
+            <td><input type="number" name="phone" id="uphone" placeholder="Enter phone" /></td>
+            </tr>
+    </tr>
+    
+
+    
+
+    
+    <tr>
+        <td><input type="button" value="Register" onclick="validateform()"/></td>
+        <td><input type="Reset" value="Clear"/></td>
+    </tr> 
+    
+</table>
+</fieldset>
+    </form>
+</body>
+</html>

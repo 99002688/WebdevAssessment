@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <title>REST API using NODE</title>
+    <script>
+        $(document).ready(function(){
+            $('#allhotels').click(function(){
+                var url = 'http://localhost:3000/ListOfHotels';
+                $.get(url,function(data,status){
+                    data.forEach(hotel => {
+                        var str='';
+                        for(const prop in hotel){
+                            str+=prop+' '+hotel[prop]+' '+'<br>';
+                        }
+                    $('#mydiv').append(str).append('<br>');
+                        
+                    });
+                })
+            });
+            $('#citybutton').click(function(){
+                var url ='http://localhost:3000/HotelsByCity';
+                var citychoice = $('#city').val();
+                $.get(url,{city:citychoice},function(data,status){
+                    data.forEach(hotel=>{
+                        var str='';
+                        for(const prop in hotel){
+                            str+=prop+' '+hotel[prop]+' '+'<br>';
+                        }
+                        $('#mydiv').append(str).append('<br>');
+                    })
+                });
+
+            });
+
+            $('#vegbutton').click(function(){
+                var url ='http://localhost:3000/HotelsByType1';
+                var typechoice = $('#veg').val();
+                $.get(url,{veg:typechoice},function(data,status){
+                    data.forEach(hotel=>{
+                        var str='';
+                        for(const prop in hotel){
+                            str+=prop+' '+hotel[prop]+' '+'<br>';
+                        }
+                        $('#mydiv').append(str).append('<br>');
+                    })
+                });
+
+            });
+
+            $('#nonvegbutton').click(function(){
+                var url ='http://localhost:3000/HotelsByType2';
+                var type2choice = $('#nonveg').val();
+                $.get(url,{nonveg:type2choice},function(data,status){
+                    data.forEach(hotel=>{
+                        var str='';
+                        for(const prop in hotel){
+                            str+=prop+' '+hotel[prop]+' '+'<br>';
+                        }
+                        $('#mydiv').append(str).append('<br>');
+                    })
+                });
+
+            });
+
+            $('#indianbutton').click(function(){
+                var url ='http://localhost:3000/HotelsByCusine1';
+                var cuisinechoice = $('#cuisine').val();
+                $.get(url,{cuisine:cuisinechoice},function(data,status){
+                    data.forEach(hotel=>{
+                        var str='';
+                        for(const prop in hotel){
+                            str+=prop+' '+hotel[prop]+' '+'<br>';
+                        }
+                        $('#mydiv').append(str).append('<br>');
+                    })
+                });
+
+            });
+
+            $('#chinesebutton').click(function(){
+                var url ='http://localhost:3000/HotelsByCuisine2';
+                var cuisine2choice = $('#type2').val();
+                $.get(url,{cuisine2:cuisine2choice},function(data,status){
+                    data.forEach(hotel=>{
+                        var str='';
+                        for(const prop in hotel){
+                            str+=prop+' '+hotel[prop]+' '+'<br>';
+                        }
+                        $('#mydiv').append(str).append('<br>');
+                    })
+                });
+
+            });
+            
+            
+        })
+    </script>
+</head>
+<body>
+ <button id="allhotels">List of Hotels</button><br>
+ <input type="text" id="city">
+ <button id="citybutton">Search Hotels By City</button><br>
+ Search Hotels by Type
+ <select name="type" id="typebutton">
+    <option value="select">--select--</option>
+    <option value="Veg" ><button id= "vegbutton">veg</button></option>
+    <option value="Nonveg" id="nonveg"><button  id= "nonvegbutton">nonveg</button></option>
+</select>   <br>
+Search Hotels by Cuisine
+<select name="cuisine" id="cuisinebutton" >
+    <option value="select">--select--</option>
+    <option value="Indian" id="indian"><button  id= "indianbutton">indian</button></option>
+    <option value="Chinese" id="chinese"><button id="chinesebutton">Chinese</button></option>
+</select>
+ <div id="mydiv"></div>  
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <title>3rd Question</title>
+    
+    <script>
+        $(document).ready(function(){
+            $('#register').click(function(){
+                var url = 'http://localhost:3000/usernamevalid';
+                $.get(url,function(data,status){
+                    data.forEach(details => {
+                        var str='';
+                        for(const prop in details){
+                            str+=prop+' '+details[prop]+' '+'<br>';
+                        }
+                    $('#mydiv').append(str).append('<br>');
+                        
+                    });
+                })
+            });
+        
+        });
+    </script>
+</head>
+<body>
+    <form action="success.html"  name="myform">
+    <fieldset>
+        <legend align="center">Demo Form</legend>
+    <table border="0.5" cellpadding="10" cellspacing="10">
+        <tr>
+        <td><b>Enter Name</b></td>
+        <td><input type="text" name="name" id="uname" placeholder="Enter name" required/></td>
+        </td><br>
+        </tr>
+        <tr>
+        <td><b>Enter city</b></td>
+        <td><input type="text" name="city" id="ucity" placeholder="Enter city" /></td>
+        </tr>
+    
+        <tr>
+            <td><b>Enter Email</b></td>
+            <td><input type="email" name="email" id="uemail" placeholder="Enter email" /></td>
+            </tr>
+    <tr>
+        <td><b>Enter Phone</b></td>
+            <td><input type="number" name="phone" id="uphone" placeholder="Enter phone" /></td>
+            </tr>
+    </tr>
+    
+
+    
+
+    
+    <tr>
+        <td><input type="button" value="Register" id= "register" /></td>
+        <td><input type="Reset" value="Clear"/></td>
+    </tr> 
+    
+</table>
+</fieldset>
+    </form>
+<div id="mydiv"></div>
+</body>
+</html>

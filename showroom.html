@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2-Arrays(Use ES6 and Arrow function wherever possible)
+</title>
+<script>
+function selectDevice(){
+arrl1 = 'Welcome to ABC Showroom~Dell~Hp~Lenovo~Asus~Apple';
+ltemp = arrl1.split('~').join(" <br> ");
+arrt2 = 'Welcome to ABC Showroom~Samsung~Sony~LG~Panasonic';
+ttemp = arrt2.split('~').join(" <br> ");
+arrm3 = 'Welcome to ABC Showroom~OnePlus~Apple~Samsung~Redmi';
+mtemp = arrm3.split('~').join(" <br> ");
+var sel = document.getElementById("mydevice");
+if(sel.value == 'Laptop'){
+document.getElementById("mydiv").innerHTML=ltemp;
+ }else if(sel.value == 'TV'){
+document.getElementById("mydiv").innerHTML=ttemp;
+ }else if(sel.value == 'Mobile'){
+document.getElementById("mydiv").innerHTML=mtemp;
+ }else{
+document.getElementById("mydiv").innerHTML="";
+ }
+ }
+</script>
+</head>
+<body>
+ Select Device
+<select name="device" id="mydevice" onclick="selectDevice()">
+<option value="select">--select--</option>
+<option value="Laptop">Laptop</option>
+<option value="TV">Television</option>
+<option value="Mobile">Mobile</option>
+</select>
+<div style="background-color: yellow; font-family: garamond;" id="mydiv"></div>
+</body>
+</html>

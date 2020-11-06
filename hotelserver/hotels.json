@@ -1,0 +1,20 @@
+[
+    {
+        "name":"Fairfield by marriott",
+        "city":"Bangalore",
+        "type":"veg",
+        "cuisine":"Indian"
+    },
+    {
+        "name":"Four seasons",
+        "city":"Bangalore",
+        "type":"nonveg",
+        "cuisine":"Indian"
+    },
+    {
+        "name":"Taj lands",
+        "city":"Mumbai",
+        "type":"veg",
+        "cuisine":"Chinese"
+    }
+]

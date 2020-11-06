@@ -1,0 +1,20 @@
+[
+    {
+        "username":"raju",
+        "city":"Bangalore",
+        "email":"abc@jkd.com",
+        "phone":"1112223334"
+    },
+    {
+        "username":"shyam",
+        "city":"Bangalore",
+        "email":"sdfr@dfn.com",
+        "phone":"4445556667"
+    },
+    {
+        "username":"baburao",
+        "city":"Mumbai",
+        "email":"erw@xsk.com",
+        "phone":"7778889990"
+    }
+]
